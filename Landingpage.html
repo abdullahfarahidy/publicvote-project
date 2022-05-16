@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publicvote</title>
+    <link rel="stylesheet" href="Landing.css">
+    <meta name="author" content="Abdullah mohamed">
+    <meta name="discription"
+        content="public voting about almost anything !">
+        <header>
+            <a class="logo" href="index.html"><img class="ligm" src="logo.jpg" alt="logo" height="50" width="50"><strong><em
+                        id="title">Publicvote</em></strong></a> 
+            <nav class="rit">
+                <div class="lang-menu">
+                    <div class="selected-lang">
+                        English
+                    </div>
+                    <ul>
+                        <li>
+                            <a href="#" class="ar" id="arabic">Arabic</a>
+                        </li>
+                        <li>
+                            <a href="#" class="en" id="english">English</a>
+                        </li>
+                        <li>
+                            <a href="#" class="de" id="german">German</a>
+                        </li>
+                        <li>
+                            <a href="#" class="fr" id="spanish">Spanish</a>
+                        </li>
+    
+                    </ul>
+                </div>
+            </nav>
+        </header>
+</head>
+<body>
+    
+    <div class="container">
+        <form class="form" id="login">
+            <h1 class="form__title">Login</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Username or email">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" autofocus placeholder="Password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit">Continue</button>
+            <p class="form__text">
+                <a href="#" class="form__link">Forgot your password?</a>
+            </p>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkCreateAccount">Don't have an account? Create account</a>
+            </p>
+        </form>
+        <form class="form form--hidden" id="createAccount">
+            <h1 class="form__title">Create Account</h1>
+            <div class="form__message form__message--error"></div>
+            <div class="form__input-group">
+                <input type="text" id="signupUsername" class="form__input" autofocus placeholder="Username">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="text" class="form__input" autofocus placeholder="Email Address">
+                <div class="form__input-error-message"></div>
+            </div>
+            <div class="form__input-group">
+                <input type="password" class="form__input" id="pass1" autofocus placeholder="Password" onkeyup="return validate()">
+                <div class="form__input-error-message"></div>
+                <ul>
+                    <li id="upper">UpperCase Letter</li>
+                    <li id="special">Special Character</li>
+                    <li id="length">Atleast8 characters</li>
+                    <li id="shouldn">shouldn't be empty</li>
+                </ul>
+                <script>
+                    function validate(){
+   var pass = document.getElementById("pass1");
+   var upper = document.getElementById("upper");
+   var special = document.getElementById("special");
+   var len = document.getElementById("length")
+   var shouldn = document.getElementById("shouldn")
+   if(pass.value.length>0){
+       shouldn.style.color="green"
+   }
+   else{
+       shouldn.style.color ="red"
+   }
+   if(pass.value.match(/[A-Z]/)){
+    upper.style.color="green"
+}
+else{
+    upper.style.color ="red"
+}
+
+if(pass.value.match(/[!\@\#\$\%\^\&\*\(\)\_\-\+\=\?\>\<\.\,]/)){
+    special.style.color="green"
+}
+else{
+    special.style.color ="red"
+}
+if(pass.value.length>= 8){
+    len.style.color="green"
+}
+else{
+    len.style.color ="red"
+}
+  }
+    
+                </script>
+            </div>
+            
+            
+            <div class="form__input-group">
+                <input type="password" id="pass2" class="form__input" autofocus placeholder="Confirm password">
+                <div class="form__input-error-message"></div>
+            </div>
+            <button class="form__button" type="submit" >Continue</button>
+            <p class="form__text">
+                <a class="form__link" href="./" id="linkLogin">Already have an account? Sign in</a>
+            </p>
+        </form>
+    </div>
+    <script src="Landing.js"></script>
+</body>
+
+</html>
